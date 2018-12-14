@@ -1,0 +1,11 @@
+{% assign sorted_pages = (site.pages | sort: 'title') %}
+{% for x in sorted_pages %}
+{% if x.section == "best_practice" and x.category == include.category %}
+  {% if x.status == "wip" %}
+* _{{ x.title }} (WIP)_
+  {% else %}
+* [{{ x.title }}]({{ site.baseurl }}{{ x.url }})
+  {% endif %}
+
+{% endif %}
+{% endfor %}

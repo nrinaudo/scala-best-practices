@@ -1,0 +1,12 @@
+name: Scala Best Practices
+markdown: kramdown
+highlighter: rouge
+baseurl: /best_practices
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  tut:
+    output: true
