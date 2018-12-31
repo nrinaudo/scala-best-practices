@@ -1,0 +1,24 @@
+{% include header.html %}
+
+{% for c in site.collections %}
+{% if c.label == page.collection %}
+{% assign col = c %}
+{% endif %}
+{% endfor %}
+
+
+<div class="wrapper">
+
+  <h1>{{ col.title }}</h1>
+  {{ content }}
+
+  <h1>Content</h1>
+
+{% include toc.html collection=col.docs %}
+
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>
