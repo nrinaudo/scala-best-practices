@@ -7,7 +7,7 @@
 {% assign cs = site.collections | sort: 'sequence' %}
 {% for c in cs %}
 {% if c.title %}
-<h2><a href="{{ site.baseurl }}{{ c.label }}">{{ c.title }}</a></h2>
+<h2><a href="{{ site.baseurl }}/{{ c.label }}">{{ c.title }}</a></h2>
 {% include toc.html collection=c.docs %}
 {% endif %}
 {% endfor %}
