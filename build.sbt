@@ -6,3 +6,7 @@ includeFilter in makeSite     := "*.yml" | "*.md" | "*.html" | "*.css" | "*.png"
 makeSite                      := makeSite.dependsOn(tut).value
 git.remoteRepo                := "git@github.com:nrinaudo/scala-best-practices.git"
 ghpagesNoJekyll               := false
+
+val tutDirName = settingKey[String]("tut output directory")
+tutDirName := "./"
+addMappingsToSiteDir(tut, tutDirName)

@@ -1,7 +1,7 @@
 name: Scala Best Practices
 markdown: kramdown
 highlighter: rouge
-baseurl: /best_practices
+baseurl: /scala-best-practices
 
 collections:
   warming_up:
