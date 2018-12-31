@@ -1,0 +1,14 @@
+{% assign sorted_pages = include.collection | sort: "title" %}
+<ul>
+{% for x in sorted_pages %}
+{% if x.title != "Index" %}
+<li>
+{% if x.status == "wip" %}
+<i>{{ x.title }} (WIP)</i>
+{% else %}
+<a href="{{ site.baseurl }}{{ x.url }}">{{ x.title }}</a>
+{% endif %}
+</li>
+{% endif %}
+{% endfor %}
+</ul>
