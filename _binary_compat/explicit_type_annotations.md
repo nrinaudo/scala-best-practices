@@ -30,20 +30,30 @@ The return type is no longer [`Option[Int]`][`Option`] but [`Some[Int]`][`Some`]
 
 Explicit type annotations on public members ensure that implementation details don't leak out and that we don't accidentally break things without meaning to, or even realizing.
 
-# Exception to the rule
+# Mistaken assumption: implementing abstract members
 
-It's ok not to add a type annotation when implementing abstract members or overriding concrete ones: this will default to the parent's type, which is the right behaviour.
+A common assumption that turns out to be incorrect is that implementing abstract members (or overriding concrete ones) is fine, since the parent type will be inferred.
+
+This turns out to be incorrect:
 
 ```scala
 abstract class Foo {
   def getOpt[A](a: A): Option[A]
 }
 
-class FooImpl  {
-  // The return type is still Option[A]
-  def getOpt[A](a: A) = None
+class FooImpl extends Foo {
+  override def getOpt[A](a: A) = Some(a)
 }
 ```
+
+It's usually assumed that `FooImpl.getOpt` will return the right type, but this is wrong:
+
+```scala
+new FooImpl().getOpt(1)
+// res0: Some[Int] = Some(1)
+```
+
+Changing `FooImpl.getOpt` implementation to return either a [`Some[Int]`][`Some`] or an [`Option[Int]`][`Option`] will break [binary compatibility][bincompat] just as much as the general case.
 
 
 [`Option`]:https://www.scala-lang.org/api/2.12.8/scala/Option.html

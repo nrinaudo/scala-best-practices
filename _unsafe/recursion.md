@@ -3,9 +3,11 @@ title: Make recursive functions tail-recursive
 layout: article
 ---
 
-> When writing [recursive] functions, make them [tail recursive].
+> When writing [recursive] functions, consider making them [tail recursive].
 
 # Reason
+
+Non-tail recursive functions that call themselves too often end up throwing [`StackOverflowError`] at runtime.
 
 Here's a naïve recursive function used to compute the sum of a [`List[Int]`][`List`]:
 
@@ -55,6 +57,19 @@ sum(List.range(1, 30000))
 // res0: Int = 449985000
 ```
 
+# Exceptions to the rule
+
+Tail recursion is a desirable property, but not an absolute requirement.
+
+There are scenarios where "normal" recursion is more appropriate. A fairly standard example is tree traversal:
+* the recursion is bounded to the height of the tree, so there's no real risk of a [`StackOverflowError`].
+* tail-recursive functions for tree exploration are far more complicated than non tail-recursive ones.
+
+As is often the case, this rule is more of a default decision, to be overruled when you need to.
+
+
+
 [recursive]:../definitions/recursion.html
 [tail recursive]:../definitions/tail_recursion.html
 [`List`]:https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/List.html
+[`StackOverflowError`]:https://docs.oracle.com/javase/8/docs/api/java/lang/StackOverflowError.html
