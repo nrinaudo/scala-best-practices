@@ -30,7 +30,7 @@ List(1) + 2
 //                  ^
 ```
 
-This is because of my old nemesis, [implicit conversions](./implicit_conversions.html). What the compiler actually ends up trying is:
+This is because of my old nemesis, [implicit conversions](../unsafe/implicit_conversions.html). What the compiler actually ends up trying is:
 
 ```scala
 any2stringadd(List(1)).+(2)
