@@ -75,7 +75,7 @@ What do you think `addi(1)` evaluates to now? Well, there's no way to know. It c
 
 ```scala
 addi(1)
-// res3: Int = 12
+// res3: Int = 11
 ```
 
 This uncertainty is something we must strive to avoid at all costs - how do you write correct code if you're not sure what happens when you run it?

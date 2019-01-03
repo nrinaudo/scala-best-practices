@@ -1,9 +1,9 @@
 ---
-title: Use upper case letters with literal syntax for numbers
+title: Use upper case numeric literal suffixes
 layout: article
 ---
 
-> When declaring literal numbers such as [`Long`] or [`Float`], use upper case letter. For example, prefer `2L` to `2l`.
+> When declaring literal numbers such as [`Long`] or [`Float`], use upper case suffix. For example, prefer `2L` to `2l`.
 
 # Reason
 
