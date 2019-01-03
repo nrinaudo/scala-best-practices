@@ -1,5 +1,5 @@
 ---
-title: Compare remainder to 0 when checking for oddness.
+title: Compare remainder to 0 when checking for oddness
 layout: article
 ---
 
