@@ -1,6 +1,14 @@
 ---
 title: Avoid using last
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: TraversableOps
+        url:  http://www.wartremover.org/doc/warts.html#traversableops
+  - name: scapegoat
+    rules:
+      - name: TraversableLast
 ---
 
 > When retrieving the last element of a sequence, use [`lastOption`] rather than [`last`].

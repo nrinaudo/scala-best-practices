@@ -1,6 +1,11 @@
 ---
 title: Avoid using init
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: TraversableOps
+        url:  http://www.wartremover.org/doc/warts.html#traversableops
 ---
 
 > When retrieving everything but the last element of a sequence, do not use [`init`]. [`dropRight(1)`] is often what you want to use.

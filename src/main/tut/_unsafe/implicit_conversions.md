@@ -1,6 +1,11 @@
 ---
 title: Avoid implicit conversions
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: ImplicitConversion
+        url:  http://www.wartremover.org/doc/warts.html#implicitconversion
 ---
 
 > Avoid implicit conversions like the plague they are.

@@ -1,6 +1,11 @@
 ---
 title: Make recursive functions tail-recursive
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: Recursion
+        url:  http://www.wartremover.org/doc/warts.html#recursion
 ---
 
 > When writing [recursive] functions, consider making them [tail recursive].

@@ -1,6 +1,13 @@
 ---
 title: Avoid mutability
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: Var
+        url:  http://www.wartremover.org/doc/warts.html#var
+      - name: MutableDataStructures
+        url: http://www.wartremover.org/doc/warts.html#mutabledatastructures
 ---
 
 > Mutability is almost always a bad idea and should be avoided.

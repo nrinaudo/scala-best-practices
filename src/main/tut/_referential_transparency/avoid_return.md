@@ -1,6 +1,18 @@
 ---
 title: Do not use return
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: Return
+        url:  http://www.wartremover.org/doc/warts.html#return
+  - name: scapegoat
+    rules:
+      - name: UnnecessaryReturnUse
+  - name: scalastyle
+    rules:
+      - name: ReturnChecker
+        url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_ReturnChecker
 ---
 
 > There's never a good reason to use the `return` keyword.

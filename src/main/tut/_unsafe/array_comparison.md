@@ -1,6 +1,14 @@
 ---
 title: Do not compare arrays with ==
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: ArrayEquals
+        url:  http://www.wartremover.org/doc/warts.html#arrayequals
+  - name: scapegoat
+    rules:
+      - name: ArrayEquals
 ---
 
 > When comparing two arrays for equality, use [`sameElements`] rather than `==`.

@@ -1,6 +1,10 @@
 ---
 title: Compare remainder to 0 when checking for oddness
 layout: article
+linters:
+  - name: scapegoat
+    rules:
+      - name: BrokenOddness
 ---
 
 > When checking whether a number is odd, always use `x % 2 != 0` rather than the more common `x % 2 == 1`.

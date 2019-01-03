@@ -1,6 +1,14 @@
 ---
 title: Mark case classes as final
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: FinalCaseClass
+        url:  http://www.wartremover.org/doc/warts.html#finalcaseclass
+  - name: scapegoat
+    rules:
+      - name: FinalModifierOnCaseClass
 ---
 
 > When declaring a case class, make it [`final`].
