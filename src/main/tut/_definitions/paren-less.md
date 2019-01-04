@@ -1,6 +1,6 @@
 ---
 title: Paren-less methods
-layout: article
+layout: definition
 ---
 
 A paren-less method is a method that doesn't take parameters (a nullary method) and that is declared without parentheses:

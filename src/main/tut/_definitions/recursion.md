@@ -1,6 +1,6 @@
 ---
 title: Recursion
-layout: article
+layout: definition
 ---
 
 A recursive function is one that calls itself. For example:

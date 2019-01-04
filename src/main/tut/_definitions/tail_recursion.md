@@ -1,6 +1,6 @@
 ---
 title: Tail recursion
-layout: article
+layout: definition
 ---
 
 A tail recursive function is a [recursive] function where the recursive call is the last thing to happen.

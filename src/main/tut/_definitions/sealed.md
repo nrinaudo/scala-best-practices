@@ -1,6 +1,6 @@
 ---
 title: Sealed types
-layout: article
+layout: definition
 ---
 
 Marking a type as `sealed` means that it can only have direct subtypes that are declared in the same source file.

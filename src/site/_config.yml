@@ -1,7 +1,7 @@
-name: Scala Best Practices
-markdown: kramdown
+name:        Scala Best Practices
+markdown:    kramdown
 highlighter: rouge
-baseurl: /scala-best-practices
+baseurl:     /scala-best-practices
 
 collections:
   warming_up:
@@ -40,5 +40,10 @@ collections:
     output: true
 
 kramdown:
-  input: GFM
+  input:     GFM
   hard_wrap: false
+
+compress_html:
+  clippings: all
+  comments:  ["<!-- ", " -->"]
+  endings:   all

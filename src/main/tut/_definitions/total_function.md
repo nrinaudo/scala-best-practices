@@ -1,6 +1,6 @@
 ---
 title: Total functions
-layout: article
+layout: definition
 ---
 
 A function is said to be total if it's defined for it's entire domain. That is, `A => B` is total if there is a `B` for every possible `A`.
