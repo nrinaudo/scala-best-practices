@@ -1,6 +1,14 @@
 ---
 title: Do not call get on an Either projection
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: EitherProjectionPartial
+        url:  http://www.wartremover.org/doc/warts.html#eitherprojectionpartial
+  - name: scapegoat
+    rules:
+      - name: EitherGet
 ---
 
 > When retrieving the content of an [`Either`], do not use [`get`] on one of its projections.

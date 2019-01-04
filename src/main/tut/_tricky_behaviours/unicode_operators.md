@@ -1,6 +1,11 @@
 ---
 title: Avoid unicode versions of ASCII operators
 layout: article
+linters:
+  - name: scalastyle
+    rules:
+      - name: NonASCIICharacterChecker
+        url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_NonASCIICharacterChecker
 ---
 
 > ASCII operators (such as `->`) should be preferred over their fancy unicode equivalents (such as `→`).

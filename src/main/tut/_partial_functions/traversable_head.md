@@ -1,6 +1,14 @@
 ---
 title: Avoid using head
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: TraversableOps
+        url:  http://www.wartremover.org/doc/warts.html#traversableops
+  - name: scapegoat
+    rules:
+      - name: TraversableHead
 ---
 
 > When retrieving the head of a sequence, use [`headOption`] rather than [`head`].

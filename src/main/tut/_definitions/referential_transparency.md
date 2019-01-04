@@ -1,6 +1,6 @@
 ---
 title: Referential transparency
-layout: article
+layout: definition
 ---
 
 An expression is said to be referentially transparent if it can be replaced by its value and not change the program's behaviour.

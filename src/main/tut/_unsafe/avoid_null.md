@@ -1,6 +1,19 @@
 ---
 title: Do not use null
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: "Null"
+        url:  http://www.wartremover.org/doc/warts.html#null
+  - name: scapegoat
+    rules:
+      - name: NullAssignment
+      - name: NullParameter
+  - name: scalastyle
+    rules:
+      - name: NullChecker
+        url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_NullChecker
 ---
 
 > Whenever `null` seems like a good idea, use [`Option`] instead.

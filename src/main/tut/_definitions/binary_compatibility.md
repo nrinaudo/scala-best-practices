@@ -1,6 +1,6 @@
 ---
 title: Binary compatibility
-layout: article
+layout: definition
 ---
 
 Two versions of a library are said to be binary compatible if you can swap one for the other without recompiling.

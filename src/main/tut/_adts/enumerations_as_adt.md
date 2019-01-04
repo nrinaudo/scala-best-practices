@@ -1,6 +1,11 @@
 ---
 title: Use ADTs to implement enumerations
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: Enumeration
+        url:  http://www.wartremover.org/doc/warts.html#enumeration
 ---
 
 > When you need to implement an enumeration, use an [ADT], not [`Enumeration`].

@@ -1,6 +1,11 @@
 ---
 title: Make subtypes of sealed types final
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: LeakingSealed
+        url:  http://www.wartremover.org/doc/warts.html#leakingsealed
 ---
 
 > When writing a subtype for a [`sealed`] type, mark it as [`final`].

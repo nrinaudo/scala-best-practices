@@ -1,6 +1,11 @@
 ---
 title: Do not compute the size of a collection to check for emptiness
 layout: article
+linters:
+  - name: scapegoat
+    rules:
+      - name: AvoidSizeEqualsZero
+      - name: AvoidSizeNotEqualsZero
 ---
 
 > When checking whether a collection is empty, use [`isEmpty`] or [`nonEmpty`] rather than the all too common `size == 0`.

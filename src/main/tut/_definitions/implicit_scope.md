@@ -1,6 +1,6 @@
 ---
 title: Implicit scope
-layout: article
+layout: definition
 ---
 
 The implicit scope of a type `T` is where the compiler will look when attempting to locate implicit instances for that type. It is composed of all the companion objects of types associated with `T`.
