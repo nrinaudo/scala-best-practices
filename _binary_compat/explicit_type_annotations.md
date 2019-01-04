@@ -1,6 +1,11 @@
 ---
 title: Add explicit type annotations to public members
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: PublicInference
+        url:  http://www.wartremover.org/doc/warts.html#publicinference
 ---
 
 > Always add an explicit type to your public members, even when you're happy with what's being inferred.

@@ -1,6 +1,11 @@
 ---
 title: Avoid structural types
 layout: article
+linters:
+  - name: scalastyle
+    rules:
+      - name: StructuralTypeChecker
+        url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_StructuralTypeChecker
 ---
 
 > When a structural type seems like a good solution to a problem, consider using a [type class] instead.

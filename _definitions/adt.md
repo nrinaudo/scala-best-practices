@@ -1,6 +1,6 @@
 ---
 title: Algebraic Data Types
-layout: article
+layout: definition
 ---
 
 Algebraic Data Types (ADTs for short) are a way of structuring data. They're widely used in Scala due, mostly, to how well they work with pattern matching and how easy it is to use them to make illegal states impossible to represent.

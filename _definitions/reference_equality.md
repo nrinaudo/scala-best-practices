@@ -1,6 +1,6 @@
 ---
 title: Reference equality
-layout: article
+layout: definition
 ---
 
 Reference equality is an equality relationship that does not only guarantee that two values are equal, but also that they are, in fact, the same value.

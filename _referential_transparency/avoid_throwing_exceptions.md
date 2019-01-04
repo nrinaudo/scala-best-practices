@@ -1,6 +1,11 @@
 ---
 title: Do not throw exceptions
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: Throw
+        url:  http://www.wartremover.org/doc/warts.html#throw
 ---
 
 > Do not throw exceptions if you can possibly avoid it.

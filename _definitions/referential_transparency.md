@@ -1,6 +1,6 @@
 ---
 title: Referential transparency
-layout: article
+layout: definition
 ---
 
 An expression is said to be referentially transparent if it can be replaced by its value and not change the program's behaviour.
@@ -75,7 +75,7 @@ What do you think `addi(1)` evaluates to now? Well, there's no way to know. It c
 
 ```scala
 addi(1)
-// res3: Int = 9
+// res3: Int = 12
 ```
 
 This uncertainty is something we must strive to avoid at all costs - how do you write correct code if you're not sure what happens when you run it?

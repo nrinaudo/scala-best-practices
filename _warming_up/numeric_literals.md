@@ -1,6 +1,11 @@
 ---
 title: Use upper case numeric literal suffixes
 layout: article
+linters:
+  - name: scalastyle
+    rules:
+      - name: UppercaseLChecker
+        url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_UppercaseLChecker
 ---
 
 > When declaring literal numbers such as [`Long`] or [`Float`], use upper case suffix. For example, prefer `2L` to `2l`.

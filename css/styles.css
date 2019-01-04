@@ -41,7 +41,7 @@ body {
 }
 
 #navbar a:hover {
-    color:              #e74c3c;
+    color:              #79d0f9;
     transition:         all 100ms ease-in-out;
     -webkit-transition: all 100ms ease-in-out;
     -moz-transition:    all 100ms ease-in-out;
@@ -143,4 +143,50 @@ blockquote {
 blockquote p {
     padding: 0.5em;
     margin:  0;
+}
+
+table {
+    border-collapse:  collapse;
+    border-spacing:   0;
+    border:           1px solid #2980b9;
+    width:            100%;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+thead th {
+    background: #2980b9;
+    color:      #fff;
+}
+
+tr td {
+    padding: 5px 10px 5px 40px;
+    text-align: center;
+}
+
+tr td:first-child {
+    padding-left: 10px;
+}
+
+td ul {
+    display: inline;
+    margin:  0;
+    padding: 0;
+}
+
+td ul li {
+    display:    inline;
+    list-style: none;
+    margin:     0;
+    padding:    0;
+}
+
+td ul li:after {
+    content: ", ";
+}
+
+td ul li:last-child:after {
+    content: "";
 }

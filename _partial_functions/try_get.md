@@ -1,6 +1,14 @@
 ---
 title: Do not call get on an Try
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: TryPartial
+        url:  http://www.wartremover.org/doc/warts.html#trypartial
+  - name: scapegoat
+    rules:
+      - name: TryGet
 ---
 
 > When retrieving the content of a [`Try`], do not use [`get`].

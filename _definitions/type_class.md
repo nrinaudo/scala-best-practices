@@ -1,6 +1,6 @@
 ---
 title: Type class
-layout: article
+layout: definition
 ---
 
 In the context of Scala, a type class is a family of types that support a known set of behaviours. This could be, for example, the family of types that expose a unique integer identifier.

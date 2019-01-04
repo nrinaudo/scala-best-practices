@@ -1,6 +1,11 @@
 ---
 title: Avoid using reduce
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: TraversableOps
+        url:  http://www.wartremover.org/doc/warts.html#traversableops
 ---
 
 > When reducing a collection to a single value, prefer [`reduceOption`] to [`reduce`].

@@ -1,6 +1,6 @@
 ---
 title: Final types
-layout: article
+layout: definition
 ---
 
 Marking a type as `final` means that it can never have subtypes.

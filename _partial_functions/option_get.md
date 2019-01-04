@@ -1,6 +1,14 @@
 ---
 title: Do not call get on an Option
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: OptionPartial
+        url:  http://www.wartremover.org/doc/warts.html#optionpartial
+  - name: scapegoat
+    rules:
+      - name: OptionGet
 ---
 
 > When retrieving the content of an [`Option`], do not use [`get`].

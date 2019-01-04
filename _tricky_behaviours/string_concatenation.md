@@ -1,6 +1,11 @@
 ---
 title: Do not concatenate Strings with +
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: StringPlusAny
+        url:  http://www.wartremover.org/doc/warts.html#stringplusany
 ---
 
 > When concatenating something to a [`String`], consider string interpolation rather than [`+`].
