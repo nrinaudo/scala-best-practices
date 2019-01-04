@@ -55,7 +55,7 @@ Which lets us run:
 // res1: Int = 2
 ```
 
-In this scenario, all [`Int`]s can be converted to `ExtendedIt`: the conversion is [total] and cannot result in runtime failure.
+In this scenario, all [`Int`]s can be converted to `ExtendedInt`: the conversion is [total] and cannot result in runtime failure.
 
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
