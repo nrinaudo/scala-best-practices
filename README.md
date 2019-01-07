@@ -8,7 +8,7 @@ The following tools are needed to build the site:
 
 ## Steps
 
-You first need to run all pages through the amazing [tut](https://github.com/tpolecat/tut) to make sure all examples are valid:
+You first need to run all pages through the amazing [mdoc](https://github.com/scalameta/mdoc) to make sure all examples are valid:
 
 ```shell
 sbt makeSite
