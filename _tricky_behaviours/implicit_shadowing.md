@@ -26,14 +26,12 @@ Note how both `foo` and `baz` contain a value called `bar`, even though they do 
 This yields the following, confusing behaviour:
 
 ```scala
-{
-  import foo._, baz._
+import foo._, baz._
 
-  implicitly[Int]
-}
-// <console>:18: error: could not find implicit value for parameter e: Int
-//          implicitly[Int]
-//                    ^
+implicitly[Int]
+// error: could not find implicit value for parameter e: Int
+// implicitly[Int]
+// ^^^^^^^^^^^^^^^
 ```
 
 There's a single implicit value of type [`Int`] in scope - `foo.bar`. But the compiler can't find it.
@@ -41,17 +39,15 @@ There's a single implicit value of type [`Int`] in scope - `foo.bar`. But the co
 One way of demonstrating *why* the compiler cannot find it is:
 
 ```scala
-{
-  import foo._, baz._
+import foo._, baz._
 
-  val a: String = bar
-}
-// <console>:18: error: reference to bar is ambiguous;
+val a: String = bar
+// error: reference to bar is ambiguous;
 // it is imported twice in the same scope by
 // import baz._
 // and import foo._
-//          val a: String = bar
-//                          ^
+// val a: String = bar
+//                 ^^^
 ```
 
 Even in the presence of sufficient type information (we know that `a` is a [`String`], and only one of the two `bar`s in scope is a [`String`]), the compiler considers two clashing names to be ambiguous and demands the ambiguity fixed.
@@ -69,37 +65,30 @@ There's at least one scenario in which an implicit's name isn't used during reso
 For example:
 
 ```scala
-object foo {
-  trait Foo[A]
-  object Foo {
-    implicit val foo: Foo[Int] = new Foo[Int] {}
-  }
+trait Foo[A]
+object Foo {
+  implicit val foo: Foo[Int] = new Foo[Int] {}
 }
 
-object bar {
-  trait Bar[A]
-  object Bar {
-    implicit val foo: Bar[String] = new Bar[String] {}
-  }
+trait Bar[A]
+object Bar {
+  implicit val foo: Bar[String] = new Bar[String] {}
 }
 ```
 
 Even though both implicit values share the name `foo`, implicit resolution works out:
 
 ```scala
-{
-  // Brings Foo and Bar in scope
-  import foo._, bar._
+// Brings Foo.foo and Bar.foo in scope
+import Foo._, Bar._
 
-  // Brings Foo.foo and Bar.foo in scope
-  import Foo._, Bar._
-
-  // No conflict here
-  implicitly[Foo[Int]]
-}
+// No conflict here
+implicitly[Foo[Int]]
+// res3: Foo[Int] = repl.Session$App2$Foo$$anon$1@38193a1f
 ```
 
 In this scenario, it's safe to give terse names to your implicits.
 
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+

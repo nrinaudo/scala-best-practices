@@ -31,3 +31,4 @@ def sum(is: List[Int]): Int = {
 `sum` itself is not tail recursive - it's not even recursive anymore. On the other hand, `loop` is tail recursive: you can see that its last action is to call itself.
 
 [recursive]:./recursion.html
+

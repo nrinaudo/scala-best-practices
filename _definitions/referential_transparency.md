@@ -75,7 +75,7 @@ What do you think `addi(1)` evaluates to now? Well, there's no way to know. It c
 
 ```scala
 addi(1)
-// res3: Int = 11
+// res3: Int = 2
 ```
 
 This uncertainty is something we must strive to avoid at all costs - how do you write correct code if you're not sure what happens when you run it?
@@ -88,3 +88,4 @@ This uncertainty is something we must strive to avoid at all costs - how do you 
 You'll often hear talk of purity and side effects. Those are just other terms for referentially transparency or opacity:
 * a function is pure if referentially transparent
 * a side effect is what makes a function impure
+

@@ -30,9 +30,9 @@ class Foo {
     case _      => acc
   }
 }
-// <console>:14: error: could not optimize @tailrec annotated method sum: it is neither private nor final so can be overridden
-//          def sum(cur: List[Int], acc: Int): Int = cur match {
-//              ^
+// error: could not optimize @tailrec annotated method sum: it is neither private nor final so can be overridden
+//   final def sum(cur: List[Int], acc: Int): Int = cur match {
+//         ^
 ```
 
 Thanks to that error message, we can fix the problem and make `sum` propery [tail-recursive]:
@@ -50,3 +50,4 @@ class Foo {
 [recursive]:../definitions/recursion.html
 [tail-recursive]:../definitions/tail_recursion.html
 [`@annotation.tailrec`]:https://www.scala-lang.org/api/2.12.8/scala/annotation/tailrec.html
+

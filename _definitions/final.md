@@ -15,7 +15,8 @@ Then the following can't compile:
 
 ```scala
 class Bar extends Foo
-// <console>:13: error: illegal inheritance from final class Foo
-//        class Bar extends Foo
-//                          ^
+// error: illegal inheritance from final class Foo
+// class Bar extends Foo
+//                   ^^^
 ```
+

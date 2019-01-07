@@ -30,11 +30,11 @@ With our current `DbError` implementation, it's impossible to write something li
 
 ```scala
 def foo(i: Int) = scala.util.Failure(DbError.InvalidSql)
-// <console>:13: error: type mismatch;
-//  found   : DbError.InvalidSql.type
+// error: type mismatch;
+//  found   : repl.Session.App.DbError.InvalidSql.type
 //  required: Throwable
-//        def foo(i: Int) = scala.util.Failure(DbError.InvalidSql)
-//                                                     ^
+// def foo(i: Int) = scala.util.Failure(DbError.InvalidSql)
+//                                      ^^^^^^^^^^^^^^^^^^
 ```
 
 Had `DbError` extended [`Exception`] however, this would have been perfectly possible:
@@ -77,3 +77,4 @@ I personally dislike this approach. It removes the compiler's ability to check w
 [`Failure`]:https://www.scala-lang.org/api/2.12.8/scala/util/Failure.html
 [`Either`]:https://www.scala-lang.org/api/2.12.8/scala/util/Either.html
 [ADT]:../definitions/adt.html
+

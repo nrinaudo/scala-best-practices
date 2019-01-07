@@ -20,3 +20,4 @@ def str2int(s: String): Int = Integer.parseInt(s)
 
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
+

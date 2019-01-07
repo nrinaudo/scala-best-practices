@@ -20,27 +20,31 @@ Some projections are [left projections][`LeftProjection`] of a [`Right`], or [ri
 ```scala
 Left(1).right.get
 // java.util.NoSuchElementException: Either.right.get on Left
-//   at scala.util.Either$RightProjection.get(Either.scala:640)
-//   ... 43 elided
+// 	at scala.util.Either$RightProjection.get(Either.scala:640)
+// 	at repl.Session$App$$anonfun$1.apply(either_projection_get.md:9)
+// 	at repl.Session$App$$anonfun$1.apply(either_projection_get.md:9)
+```
 
+```scala
 Right(1).left.get
 // java.util.NoSuchElementException: Either.left.get on Right
-//   at scala.util.Either$LeftProjection.get(Either.scala:496)
-//   ... 43 elided
+// 	at scala.util.Either$LeftProjection.get(Either.scala:496)
+// 	at repl.Session$App$$anonfun$2.apply(either_projection_get.md:17)
+// 	at repl.Session$App$$anonfun$2.apply(either_projection_get.md:17)
 ```
 
 If you have a default value to provide for the "other" case, use [`getOrElse`] on a projection:
 
 ```scala
 Left(1).right.getOrElse(-1)
-// res2: Int = -1
+// res0: Int = -1
 ```
 
 Alternatively, if you're using the common convention of treating the [`Left`] side of an [`Either`] as the error case, you can also call [`getOrElse`][biasedGetOrElse] directly on the [`Either`]:
 
 ```scala
 Left(1).getOrElse(-1)
-// res3: Int = -1
+// res1: Int = -1
 ```
 
 Another practical approach is to use [`fold`], which lets you provide a handler for each case:
@@ -50,7 +54,7 @@ Another practical approach is to use [`fold`], which lets you provide a handler 
   i => s"Found an int: '$i'",
   b => s"Found a boolean: '$b'"
 )
-// res4: String = Found an int: '1'
+// res2: String = "Found an int: '1'"
 ```
 
 [`Either`]:https://www.scala-lang.org/api/2.12.8/scala/util/Either.html
@@ -62,3 +66,4 @@ Another practical approach is to use [`fold`], which lets you provide a handler 
 [`getOrElse`]:https://www.scala-lang.org/api/2.12.8/scala/util/Either$$RightProjection.html#getOrElse[B1%3E:B](or:=%3EB1):B1
 [`get`]:https://www.scala-lang.org/api/2.12.8/scala/util/Try.html#get:T
 [biasedGetOrElse]:https://www.scala-lang.org/api/2.12.8/scala/util/Either.html#getOrElse[B1%3E:B](or:=%3EB1):B1
+

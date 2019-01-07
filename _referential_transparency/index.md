@@ -9,3 +9,4 @@ Scala, being the hybrid that it is, has features that are commonly used in imper
 And for readers that are in the "Scala as an imperative language" part of the community: even then, [referential transparency][reftrans] is a useful property, a good default to strive for but break when needed.
 
 [reftrans]:../definitions/referential_transparency.html
+

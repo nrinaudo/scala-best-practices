@@ -13,9 +13,9 @@ Trying to call is with parentheses will fail:
 
 ```scala
 foo()
-// <console>:14: error: Int does not take parameters
-//        foo()
-//           ^
+// error: Int does not take parameters
+// foo()
+// ^^^^^
 ```
 
 An interesting property of paren-less methods is that they can be overridden (or implemented, if abstract) by `val`s.

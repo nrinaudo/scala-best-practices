@@ -31,8 +31,10 @@ This compiles without a warning but will blow up at runtime:
 ```scala
 foo(Status.Nok)
 // scala.MatchError: Nok (of class scala.Enumeration$Val)
-//   at .foo(<console>:13)
-//   ... 43 elided
+// 	at repl.Session$App$.foo(enumerations_as_adt.md:13)
+// 	at repl.Session$App$$anonfun$1.apply$mcV$sp(enumerations_as_adt.md:22)
+// 	at repl.Session$App$$anonfun$1.apply(enumerations_as_adt.md:22)
+// 	at repl.Session$App$$anonfun$1.apply(enumerations_as_adt.md:22)
 ```
 
 [ADTs][ADT], on the other hand, do not suffer from this issue. Here's a better implementation of `Status`:
@@ -51,12 +53,12 @@ The compiler now has enough information to check whether your pattern matches ar
 def foo(w: Status): Unit = w match {
   case Status.Ok => println("ok")
 }
-// <console>:14: warning: match may not be exhaustive.
+// warning: match may not be exhaustive.
 // It would fail on the following input: Nok
-//        def foo(w: Status): Unit = w match {
-//                                   ^
-// foo: (w: Status)Unit
+// def foo(w: Status): Unit = w match {
+//                            ^
 ```
 
 [`Enumeration`]:https://www.scala-lang.org/api/2.12.8/scala/Enumeration.html
 [ADT]:../definitions/adt.html
+

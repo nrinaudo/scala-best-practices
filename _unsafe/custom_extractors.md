@@ -13,11 +13,8 @@ This is a bit convoluted and has to do with exhaustivity checking in pattern mat
 def unwrap(oi: Option[Int]): Int = oi match {
   case Some(i) => i
 }
-// <console>:12: warning: match may not be exhaustive.
+// warning: match may not be exhaustive.
 // It would fail on the following input: None
-//        def unwrap(oi: Option[Int]): Int = oi match {
-//                                           ^
-// unwrap: (oi: Option[Int])Int
 ```
 
 You get a warning here because there are values of `oi` that would cause your code to fail at runtime.
@@ -61,9 +58,11 @@ We're not getting a warning, even though our pattern match is clearly non-exhaus
 
 ```scala
 getCode(Error.Unknown("error"))
-// scala.MatchError: Unknown(error) (of class Error$Unknown)
-//   at .getCode(<console>:14)
-//   ... 43 elided
+// scala.MatchError: Unknown(error) (of class repl.Session$App$Error$Unknown)
+// 	at repl.Session$App$.getCode(custom_extractors.md:35)
+// 	at repl.Session$App$$anonfun$2.apply$mcI$sp(custom_extractors.md:44)
+// 	at repl.Session$App$$anonfun$2.apply(custom_extractors.md:44)
+// 	at repl.Session$App$$anonfun$2.apply(custom_extractors.md:44)
 ```
 
 The presence of an extractor whose return type was [`Option`] disabled exhaustivity checking, even in the presence of concrete values that are not covered by the pattern match.
@@ -92,11 +91,10 @@ This is a subtle difference that changes everything: [`Some`] means that our ext
 def getCode(error: Error): Int = error match {
   case Error.Known(code) => code
 }
-// <console>:14: warning: match may not be exhaustive.
+// warning: match may not be exhaustive.
 // It would fail on the following input: Unknown(_)
-//        def getCode(error: Error): Int = error match {
-//                                         ^
-// getCode: (error: Error)Int
+// def getCode(error: Error): Int = error match {
+//                                  ^^^^^
 ```
 
 # Improvement
@@ -105,3 +103,4 @@ An even better rule of thumb would be to either not define custom extractors, or
 
 [`Some`]:https://www.scala-lang.org/api/2.12.8/scala/Some.html
 [`Option`]:https://www.scala-lang.org/api/2.12.8/scala/Option.html
+

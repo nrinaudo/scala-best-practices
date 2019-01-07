@@ -21,14 +21,18 @@ def foo(i: Int) = {
   if(i % 2 == 0) Some(i)
   else           None
 }
-// foo: (i: Int)Option[Int]
+
+foo(1)
+// res0: Option[Int] = None
 ```
 
 [`Some[Int]`][`Some`] and [`None`] share a common direct supertype: [`Option[Int]`][`Option`] (well, [not quite](../adts/product_with_serializable.html), but close enough for our purposes). This allows the compiler to correctly infer `foo`'s return type, but what if we were to change the implementation in a later version?
 
 ```scala
 def foo(i: Int) = Some(i)
-// foo: (i: Int)Some[Int]
+
+foo(1)
+// res2: Some[Int] = Some(1)
 ```
 
 The return type is no longer [`Option[Int]`][`Option`] but [`Some[Int]`][`Some`], and just like that, we've broken [binary compatibility][bincompat].
@@ -55,7 +59,7 @@ It's usually assumed that `FooImpl.getOpt` will return the right type, but this 
 
 ```scala
 new FooImpl().getOpt(1)
-// res0: Some[Int] = Some(1)
+// res3: Some[Int] = Some(1)
 ```
 
 Changing `FooImpl.getOpt` implementation to return either a [`Some[Int]`][`Some`] or an [`Option[Int]`][`Option`] will break [binary compatibility][bincompat] just as much as the general case.
@@ -66,3 +70,4 @@ Changing `FooImpl.getOpt` implementation to return either a [`Some[Int]`][`Some`
 [`Any`]:https://www.scala-lang.org/api/2.12.8/scala/Any.html
 [bincompat]:../definitions/binary_compatibility.html
 [`None`]:https://www.scala-lang.org/api/2.12.8/scala/None$.html
+

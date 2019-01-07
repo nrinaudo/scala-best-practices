@@ -46,9 +46,10 @@ Here, the most specific supertype of both `Status.Ok` and `Status.Nok` is `Statu
 
 ```scala
 List(Status.Ok, Status.Nok)
-// res1: List[Status] = List(Ok, Nok)
+// res2: List[Status] = List(Ok, Nok)
 ```
 
 [ADT]:../definitions/adt.html
 [`Product`]:https://www.scala-lang.org/api/2.12.8/scala/Product.html
 [`Serializable`]:https://www.scala-lang.org/api/2.12.8/scala/Serializable.html
+

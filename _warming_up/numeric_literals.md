@@ -18,16 +18,15 @@ To the casual reader, the following has a fair chance of looking like a list of 
 
 ```scala
 List(1, 11, 111, 111l, 11111, 11111, 11111)
-// res0: List[Long] = List(1, 11, 111, 111, 11111, 11111, 11111)
 ```
 
-Using upper-case letters makes this a lot more obvious:
+Using upper-case letters makes this more obvious:
 
 ```scala
 List(1, 11, 111, 111L, 11111, 11111, 11111)
-// res1: List[Long] = List(1, 11, 111, 111, 11111, 11111, 11111)
 ```
 
 [`Long`]:https://www.scala-lang.org/api/2.12.8/scala/Long.html
 [`Float`]:https://www.scala-lang.org/api/2.12.8/scala/Float.html
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
+

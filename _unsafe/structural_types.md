@@ -74,10 +74,11 @@ And we can now call `add1` like we wanted:
 
 ```scala
 add1(Wrapper(1))
-// res2: Int = 2
+// res1: Int = 2
 ```
 
 This solution is admitedly more verbose than the structural type alternative. It's also entirely statically verified, cannot fail at runtime, and is probably also slightly faster.
 
 [`SecurityManager`]:https://docs.oracle.com/javase/7/docs/api/java/lang/SecurityManager.html
 [type class]:../definitions/type_class.html
+

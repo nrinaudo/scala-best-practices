@@ -49,3 +49,4 @@ This is not the preferred solution because it's slightly more expensive, creatin
 [`deep`]:https://www.scala-lang.org/api/2.12.8/scala/Array.html#deep:IndexedSeq[Any]
 [`equals`]:https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html#equals-java.lang.Object-java.lang.Object-
 [reference equality]:../definitions/reference_equality.html
+

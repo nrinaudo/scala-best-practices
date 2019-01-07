@@ -72,3 +72,4 @@ def sum(is: List[Int]): Int = is.fold(0)(_ + _)
 
 
 [reftrans]:../definitions/referential_transparency.html
+

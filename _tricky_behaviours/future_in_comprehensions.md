@@ -38,7 +38,7 @@ def combine(): Future[Int] = for {
 `combine` desugars to:
 
 ```scala
-def combine(): Future[Int] =
+def desugaredCombine(): Future[Int] =
   Future(longRunning()).flatMap { i =>
     Future(immediate()).map(j => i + j)
   }
@@ -52,7 +52,7 @@ To make this evident, let's evaluate `combine`. However many times you run it, `
 Await.result(combine(), 500.millis)
 // LONG
 // IMMEDIATE
-// res0: Int = 3
+// res1: Int = 3
 ```
 
 This can be worked around by creating the two [`Future`] instances outside of the for-comprehension: [`Future`] has the controversial behaviour that it starts executing when created, not when evaluated.
@@ -75,9 +75,10 @@ And if we now evaluate `betterCombine`, the log messages should print in the exp
 Await.result(betterCombine(), 200.millis)
 // IMMEDIATE
 // LONG
-// res1: Int = 3
+// res2: Int = 3
 ```
 
 [`Future`]:https://www.scala-lang.org/api/2.12.8/scala/concurrent/Future.html
 [`flatMap`]:https://www.scala-lang.org/api/2.12.8/scala/concurrent/Future.html#flatMap[S](f:T=%3Escala.concurrent.Future[S])(implicitexecutor:scala.concurrent.ExecutionContext):scala.concurrent.Future[S]
 [`map`]:https://www.scala-lang.org/api/2.12.8/scala/concurrent/Future.html#map[S](f:T=%3ES)(implicitexecutor:scala.concurrent.ExecutionContext):scala.concurrent.Future[S]
+

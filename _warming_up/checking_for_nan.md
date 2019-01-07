@@ -45,3 +45,4 @@ Note that this is an optimisation, and one that is sure to mystify some readers.
 
 [`NaN`]:https://www.scala-lang.org/api/2.12.8/scala/Double$.html#NaN:Double(NaN)
 [`isNaN`]:https://www.scala-lang.org/api/2.12.8/scala/Double.html#isNaN:Boolean
+

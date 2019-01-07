@@ -7,3 +7,4 @@ layout: section
 We'll explore here a few perfectly innocent design decisions that can, and often will, eventually break [binary compatibility][bincompat] without the author realising it's happened.
 
 [bincompat]:../definitions/binary_compatibility.html
+

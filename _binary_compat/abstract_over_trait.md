@@ -56,3 +56,4 @@ But abstract classes are not a worse choice than traits in most other scenarios 
 to
 
 > When in doubt and writing code that is or might become a library or is or might be called from Java, use an abstract class.
+

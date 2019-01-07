@@ -17,11 +17,12 @@ object Foo {
 
 `bar` is of type [`List[Foo]`][`List`], and is located within the companion object of `Foo`, a type associated with [`List[Foo]`][`List`]: it's in the implicit scope of [`List[Foo]`][`List`] and we need no special import for the compiler to locate it.
 
-[//]: Cannot tut this, since `object Foo` isn't actually the companion object of `Foo` in a repl session.
 ```scala
 implicitly[List[Foo]]
+// res0: List[Foo] = List()
 ```
 
 The implicit scope is particularly helpful when defining [type class](type-class.html) instances.
 
 [`List`]:https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/List.html
+

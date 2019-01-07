@@ -36,3 +36,4 @@ For this reason, it's preferable to default to [`final`] subtypes unless you hav
 
 [`sealed`]:../definitions/sealed.html
 [`final`]:../definitions/final.html
+

@@ -25,7 +25,8 @@ def sum(is: List[Int]): Int = is match {
 
 This implementation suffers from a major flaw: on long enough lists, it will cause a runtime exception.
 
-[//]: I cannot use tut here since there's no way I could find to truncate the output, and the stack trace is *large*.
+[//]: I cannot use mdoc here since there's no way I could find to truncate the output, and the stack trace is *large*.
+
 ```scala
 sum(List.range(1, 30000))
 // java.lang.StackOverflowError
@@ -59,7 +60,7 @@ And as you can see, this is now safe:
 
 ```scala
 sum(List.range(1, 30000))
-// res0: Int = 449985000
+// res1: Int = 449985000
 ```
 
 # Exceptions to the rule
@@ -73,8 +74,8 @@ There are scenarios where "normal" recursion is more appropriate. A fairly stand
 As is often the case, this rule is more of a default decision, to be overruled when you need to.
 
 
-
 [recursive]:../definitions/recursion.html
 [tail recursive]:../definitions/tail_recursion.html
 [`List`]:https://www.scala-lang.org/api/2.12.8/scala/collection/immutable/List.html
 [`StackOverflowError`]:https://docs.oracle.com/javase/8/docs/api/java/lang/StackOverflowError.html
+

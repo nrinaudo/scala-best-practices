@@ -46,8 +46,10 @@ foo1()
 ```scala
 foo2()
 // java.lang.Exception
-//   at .foo2(<console>:13)
-//   ... 43 elided
+// 	at repl.Session$App$.foo2(avoid_throwing_exceptions.md:12)
+// 	at repl.Session$App$$anonfun$2.apply$mcI$sp(avoid_throwing_exceptions.md:27)
+// 	at repl.Session$App$$anonfun$2.apply(avoid_throwing_exceptions.md:27)
+// 	at repl.Session$App$$anonfun$2.apply(avoid_throwing_exceptions.md:27)
 ```
 
 ## They're unsafe
@@ -65,8 +67,9 @@ As far as the type checker is concerned, this function is perfectly fine and it'
 ```scala
 foo(1)
 // java.lang.Exception
-//   at .foo(<console>:12)
-//   ... 43 elided
+// 	at repl.Session$App$.foo(avoid_throwing_exceptions.md:34)
+// 	at repl.Session$App$$anonfun$3.apply(avoid_throwing_exceptions.md:41)
+// 	at repl.Session$App$$anonfun$3.apply(avoid_throwing_exceptions.md:41)
 ```
 
 This blows up at runtime, which is really something we'd like to avoid.
@@ -84,3 +87,4 @@ But scenarios such as _parse this string into an int_ should never throw - a [`S
 [`Option`]:https://www.scala-lang.org/api/2.12.8/scala/Option.html
 [`Try`]:https://www.scala-lang.org/api/2.12.8/scala/util/Try.html
 [`Either`]:https://www.scala-lang.org/api/2.12.8/scala/util/Either.html
+

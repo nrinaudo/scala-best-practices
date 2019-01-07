@@ -55,7 +55,6 @@ If `return` was [referentially transparent][reftrans], we'd get the same `foo1` 
 ```scala
 foo1(-1)
 // res0: Int = -1
-
 foo2(-1)
 // res1: Int = 1
 ```
@@ -66,22 +65,22 @@ Let's take the following, fairly straightforward method:
 
 ```scala
 def foo(is: List[Int]): List[Int] = is.map(n => return n + 1)
-// <console>:12: error: type mismatch;
+// error: type mismatch;
 //  found   : Int
 //  required: List[Int]
-//        def foo(is: List[Int]): List[Int] = is.map(n => return n + 1)
-//                                                                 ^
+// def foo(is: List[Int]): List[Int] = is.map(n => return n + 1)
+//                                                        ^^^^^
 ```
 
 The compilation error doesn't seem to make much sense - how can a [`map`] on a [`List[Int]`][`List`] yield an [`Int`]? But the compiler tends to be smarter than us about these things, so let's play along.
 
 ```scala
 def foo(is: List[Int]): Int = is.map(n => return n + 1)
-// <console>:12: error: type mismatch;
+// error: type mismatch;
 //  found   : List[Nothing]
 //  required: Int
-//        def foo(is: List[Int]): Int = is.map(n => return n + 1)
-//                                            ^
+// def foo(is: List[Int]): List[Int] = is.map(n => return n + 1)
+//                                           ^
 ```
 
 It's unclear how [`Nothing`] got mixed up in there, and is usually the sign that something went south, but fine, down the rabbit hole we go:
@@ -89,11 +88,11 @@ It's unclear how [`Nothing`] got mixed up in there, and is usually the sign that
 
 ```scala
 def foo(is: List[Int]): List[Nothing] = is.map(n => return n + 1)
-// <console>:12: error: type mismatch;
+// error: type mismatch;
 //  found   : Int
 //  required: List[Nothing]
-//        def foo(is: List[Int]): List[Nothing] = is.map(n => return n + 1)
-//                                                                     ^
+// def foo(is: List[Int]): List[Int] = is.map(n => return n + 1)
+//                                                        ^^^^^
 ```
 
 `(╯°□°）╯︵ ┻━┻`
@@ -106,3 +105,4 @@ I don't understand what's going on there, nor do I really want to. `return` is m
 [`Nothing`]:https://www.scala-lang.org/api/2.12.8/scala/Nothing.html
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
 [reftrans]:../definitions/referential_transparency.html
+

@@ -34,7 +34,7 @@ Map(
   new Bar(1, "foo") -> "foo",
   new Bar(1, "bar") -> "bar"
 )
-// res1: scala.collection.immutable.Map[Bar,String] = Map(Foo(1) -> bar)
+// res1: Map[Bar, String] = Map(Foo(1) -> "bar")
 
 new Bar(1, "baz")
 // res2: Bar = Foo(1)
@@ -98,3 +98,4 @@ So, as is often the case, there are scenarios in which this rule must be broken.
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
 [`final`]:../definitions/final.html
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+

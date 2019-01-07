@@ -29,11 +29,13 @@ Our proof is unfortunately flawed, and will result in runtime failures:
 ```scala
 "foobar" / 2
 // java.lang.NumberFormatException: For input string: "foobar"
-//   at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-//   at java.lang.Integer.parseInt(Integer.java:580)
-//   at java.lang.Integer.parseInt(Integer.java:615)
-//   at .str2int(<console>:12)
-//   ... 43 elided
+// 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+// 	at java.lang.Integer.parseInt(Integer.java:580)
+// 	at java.lang.Integer.parseInt(Integer.java:615)
+// 	at repl.Session$App$.str2int(implicit_conversions.md:8)
+// 	at repl.Session$App$$anonfun$1.apply$mcI$sp(implicit_conversions.md:15)
+// 	at repl.Session$App$$anonfun$1.apply(implicit_conversions.md:15)
+// 	at repl.Session$App$$anonfun$1.apply(implicit_conversions.md:15)
 ```
 
 # Exceptions to the rule
@@ -52,7 +54,7 @@ Which lets us run:
 
 ```scala
 1.add1
-// res1: Int = 2
+// res0: Int = 2
 ```
 
 In this scenario, all [`Int`]s can be converted to `ExtendedInt`: the conversion is [total] and cannot result in runtime failure.
@@ -60,3 +62,4 @@ In this scenario, all [`Int`]s can be converted to `ExtendedInt`: the conversion
 [`Int`]:https://www.scala-lang.org/api/2.12.8/scala/Int.html
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
 [total]:../definitions/total_function.html
+

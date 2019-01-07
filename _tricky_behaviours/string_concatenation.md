@@ -18,21 +18,21 @@ It has, for example, wildly different behaviours for similar collections:
 
 ```scala
 List("foo") + "bar"
-// res0: String = List(foo)bar
+// res0: String = "List(foo)bar"
 
 Set("foo") + "bar"
-// res1: scala.collection.immutable.Set[String] = Set(foo, bar)
+// res1: Set[String] = Set("foo", "bar")
 ```
 
 [`+`] also causes this kind of absolutely nonsensical error message:
 
 ```scala
 List(1) + 2
-// <console>:13: error: type mismatch;
+// error: type mismatch;
 //  found   : Int(2)
 //  required: String
-//        List(1) + 2
-//                  ^
+// List(1) + 2
+//           ^
 ```
 
 This is because of my old nemesis, [implicit conversions](../unsafe/implicit_conversions.html). What the compiler actually ends up trying is:
@@ -47,15 +47,16 @@ String interpolation, on the other hand, is safe and coherent:
 
 ```scala
 s"${List("foo")}bar"
-// res4: String = List(foo)bar
+// res4: String = "List(foo)bar"
 
 s"${Set("foo")}bar"
-// res5: String = Set(foo)bar
+// res5: String = "Set(foo)bar"
 
 s"${List(1)}${2}"
-// res6: String = List(1)2
+// res6: String = "List(1)2"
 ```
 
 [`+`]:https://www.scala-lang.org/api/2.12.8/scala/Any.html#+(other:String):String
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
 [`any2stringadd`]:https://www.scala-lang.org/api/2.12.8/scala/Predef$.html#any2stringadd[A]extendsAnyVal
+

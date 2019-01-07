@@ -87,3 +87,4 @@ def print(cmd: Command) = cmd match {
 
 [`Tuple`]:https://www.scala-lang.org/api/2.12.8/scala/Tuple2.html
 [`Boolean`]:https://www.scala-lang.org/api/2.12.8/scala/Boolean.html
+

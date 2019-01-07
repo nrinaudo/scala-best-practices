@@ -20,20 +20,23 @@ Some collections are empty, and [`head`] deals with them by throwing an exceptio
 ```scala
 Seq.empty[Int].head
 // java.util.NoSuchElementException: head of empty list
-//   at scala.collection.immutable.Nil$.head(List.scala:430)
-//   at scala.collection.immutable.Nil$.head(List.scala:427)
-//   ... 43 elided
+// 	at scala.collection.immutable.Nil$.head(List.scala:430)
+// 	at scala.collection.immutable.Nil$.head(List.scala:427)
+// 	at repl.Session$App$$anonfun$1.apply$mcI$sp(traversable_head.md:9)
+// 	at repl.Session$App$$anonfun$1.apply(traversable_head.md:9)
+// 	at repl.Session$App$$anonfun$1.apply(traversable_head.md:9)
 ```
 
 [`headOption`] is a safer alternative, since it encodes the possibility of the empty list in its return type:
 
 ```scala
 Seq(1, 2, 3).headOption
-// res1: Option[Int] = Some(1)
+// res0: Option[Int] = Some(1)
 
 Seq.empty[Int].headOption
-// res2: Option[Int] = None
+// res1: Option[Int] = None
 ```
 
 [`head`]:https://www.scala-lang.org/api/2.12.8/scala/collection/Seq.html#head:A
 [`headOption`]:https://www.scala-lang.org/api/2.12.8/scala/collection/Seq.html#headOption:Option[A]
+

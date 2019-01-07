@@ -17,19 +17,20 @@ Some collections are empty, and [`tail`] deals with them by throwing an exceptio
 ```scala
 Seq.empty[Int].tail
 // java.lang.UnsupportedOperationException: tail of empty list
-//   at scala.collection.immutable.Nil$.tail(List.scala:432)
-//   at scala.collection.immutable.Nil$.tail(List.scala:427)
-//   ... 43 elided
+// 	at scala.collection.immutable.Nil$.tail(List.scala:432)
+// 	at scala.collection.immutable.Nil$.tail(List.scala:427)
+// 	at repl.Session$App$$anonfun$1.apply(traversable_tail.md:9)
+// 	at repl.Session$App$$anonfun$1.apply(traversable_tail.md:9)
 ```
 
 [`drop(1)`], on the other hand, will yield a reasonable value: the empty list.
 
 ```scala
 Seq(1, 2, 3).drop(1)
-// res1: Seq[Int] = List(2, 3)
+// res0: Seq[Int] = List(2, 3)
 
 Seq.empty[Int].drop(1)
-// res2: Seq[Int] = List()
+// res1: Seq[Int] = List()
 ```
 
 # Exceptions to the rule
@@ -39,3 +40,4 @@ It's just that, often, getting the empty list when you ask for everything but th
 
 [`tail`]:https://www.scala-lang.org/api/2.12.8/scala/collection/Seq.html#tail:A
 [`drop(1)`]:https://www.scala-lang.org/api/2.12.8/scala/collection/Seq.html#drop(n:Int):Repr
+

@@ -21,7 +21,7 @@ trait Foo[A] {
 And now, an incorrect but valid implementation:
 
 ```scala
-implicit val fooInt: Foo[Int] = new Foo[Int] {
+implicit val badFooInt: Foo[Int] = new Foo[Int] {
   // Notice how this is not quite the right name.
   def fool(i: Int) = 2
 }
@@ -35,9 +35,9 @@ Had we used the `override` keyword, however, the compiler would have caught our 
 implicit val fooInt: Foo[Int] = new Foo[Int] {
   override def fool(i: Int) = 2
 }
-// <console>:15: error: method fool overrides nothing
-//          override def fool(i: Int) = 2
-//                       ^
+// error: method fool overrides nothing
+//   override def fool(i: Int) = 2
+//   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 
 # Alternatives

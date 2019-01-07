@@ -20,27 +20,27 @@ Some [`Trys`][`Try`] are [`Failures`][`Failure`], and [`get`] deals with them by
 ```scala
 scala.util.Failure(new Exception).get
 // java.lang.Exception
-//   ... 43 elided
+// 	at repl.Session$App$$anonfun$1.apply(try_get.md:9)
+// 	at repl.Session$App$$anonfun$1.apply(try_get.md:9)
 ```
 
 If you have a default value to provide in case of a [`Failure`], use [`getOrElse`]:
 
 ```scala
 scala.util.Failure(new Exception).getOrElse(-1)
-// res1: Int = -1
+// res0: Int = -1
 ```
 
 Another practical approach is to use [`fold`], which lets you provide a handler for each case:
 
 ```scala
 import scala.util.{Failure, Try}
-// import scala.util.{Failure, Try}
 
 (Failure(new Exception): Try[Int]).fold(
   e => s"Found an error: '${e.getMessage}'",
   i => s"Found an int: '$i'"
 )
-// res2: String = Found an error: 'null'
+// res1: String = "Found an error: 'null'"
 ```
 
 [`Try`]:https://www.scala-lang.org/api/2.12.8/scala/util/Try.html
@@ -49,3 +49,4 @@ import scala.util.{Failure, Try}
 [`get`]:https://www.scala-lang.org/api/2.12.8/scala/util/Try.html#get:T
 [`Failure`]:https://www.scala-lang.org/api/2.12.8/scala/util/Failure.html
 [`Success`]:https://www.scala-lang.org/api/2.12.8/scala/util/Success.html
+

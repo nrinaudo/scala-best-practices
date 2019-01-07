@@ -38,3 +38,4 @@ This might not seem like a big deal - as far as `scalac` is concerned, `Test.foo
 * potentially cause Java interop issues, since `javac` will let you extend `Test.foo`.
 
 [`final`]:../definitions/final.html
+

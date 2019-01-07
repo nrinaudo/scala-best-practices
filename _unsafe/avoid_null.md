@@ -33,7 +33,8 @@ The compiler believes `s` to be a [`String`] and will accept it wherever one is 
 ```scala
 s.toLowerCase
 // java.lang.NullPointerException
-//   ... 43 elided
+// 	at repl.Session$App$$anonfun$2.apply(avoid_null.md:15)
+// 	at repl.Session$App$$anonfun$2.apply(avoid_null.md:15)
 ```
 
 Whenever you're using `null`, you're hindering the compiler's ability to prove your code incorrect.
@@ -72,3 +73,4 @@ The standard [`URI`] class, for example, expect `null` values in its constructor
 [`Option`]:https://www.scala-lang.org/api/2.12.8/scala/Option.html
 [`String`]:https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
 [`URI`]:https://docs.oracle.com/javase/8/docs/api/java/net/URI.html
+

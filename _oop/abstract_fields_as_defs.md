@@ -51,10 +51,10 @@ But implementing `AsVal.bar` as a `def` does not:
 new AsVal {
   override def bar = 0
 }
-// <console>:15: error: overriding value bar in class AsVal of type Int;
+// error: overriding value bar in class AsVal of type Int;
 //  method bar needs to be a stable, immutable value
-//          override def bar = 0
-//                       ^
+//   override def bar = 0
+//   ^^^^^^^^^^^^^^^^^^^^
 ```
 
 Declaring abstract fields as `val`s closes some possibilities, while declaring them as [paren-less] methods has no ill effect.
@@ -97,10 +97,11 @@ Then we'd get a compilation error attempting to get the type of `foo.bar`:
 
 ```scala
 val fooBar: foo.bar.type = foo.bar
-// <console>:13: error: stable identifier required, but foo.bar.type found.
-//        val fooBar: foo.bar.type = foo.bar
-//                           ^
+// error: stable identifier required, but foo.bar.type found.
+// val fooBar: foo.bar.type = foo.bar
+//             ^^^^^^^^^^^^
 ```
 
 
 [paren-less]:../definitions/paren-less.html
+
