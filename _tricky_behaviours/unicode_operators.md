@@ -16,7 +16,7 @@ While they're supposed to be equivalent, they're not, at least as far as [priori
 * `->` has a lower priority than `/`
 * `→` has a higher priority than `/`
 
-This makes the following code is legal:
+This makes the following code legal:
 
 ```scala
 1 -> 4 / 2 // Equivalent to 1 -> (4 / 2)

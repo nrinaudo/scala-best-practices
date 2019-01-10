@@ -84,7 +84,7 @@ import Foo._, Bar._
 
 // No conflict here
 implicitly[Foo[Int]]
-// res3: Foo[Int] = repl.Session$App2$Foo$$anon$1@38193a1f
+// res3: Foo[Int] = repl.Session$App2$Foo$$anon$1@6d2a555a
 ```
 
 In this scenario, it's safe to give terse names to your implicits.
