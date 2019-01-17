@@ -1,6 +1,11 @@
 ---
 title: Use override when implementing abstract members
 layout: article
+linters:
+  - name: wartremover
+    rules:
+      - name: MissingOverride
+        url:  https://github.com/wartremover/wartremover-contrib#missingoverride
 ---
 
 > When overriding a concrete member or implementing an abstract one, use the `override` keyword.
