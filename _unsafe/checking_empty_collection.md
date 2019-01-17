@@ -36,10 +36,10 @@ We can now check that one approach is indeed far longer than the other:
 
 ```scala
 time(list.isEmpty)
-// res0: Long = 0L
+// res0: Long = 1L
 
 time(list.size == 0)
-// res1: Long = 69L
+// res1: Long = 40L
 ```
 
 ## It's unsafe
