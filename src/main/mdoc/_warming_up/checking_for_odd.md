@@ -9,6 +9,8 @@ linters:
 
 > When checking whether a number is odd, always use `x % 2 != 0` rather than the more common `x % 2 == 1`.
 
+Note that, unlike most rules here, this one is not Scala specific.
+
 # Reason
 
 There are odd numbers whose division by 2 has a remainder that's not 1:
