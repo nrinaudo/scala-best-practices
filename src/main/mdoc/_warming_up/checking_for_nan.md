@@ -13,6 +13,8 @@ linters:
 
 > When checking whether a number is [`NaN`], use [`isNaN`] rather than `== NaN`.
 
+Note that, unlike most rules here, this one is not Scala specific. `NaN` equality behaves unintuitively everywhere `NaN` exists.
+
 # Reason
 
 By [specification](https://en.wikipedia.org/wiki/IEEE_754), [`NaN`] is not equal to anything, not even itself:
