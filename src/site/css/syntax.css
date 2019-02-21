@@ -1,3 +1,5 @@
+@import '../fonts/fira/fira.css';
+
 .highlight pre code {
   white-space: pre;       // forces <code> to respect <pre> formatting
 }
@@ -5,7 +7,7 @@
 .highlight pre, pre, .highlight .hll { background-color: #f8f8f8; padding: 6px 10px }
 
 code {
-    font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+    font-family: "Fira Mono";
 }
 
 .highlight .c { color: #586E75 } /* Comment */
