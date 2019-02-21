@@ -26,63 +26,40 @@ And if your custom extractor returns [`Option`], that's exactly what happens: it
 Here's a concrete example:
 
 ```scala mdoc
-// Generic error ADT, encoding both known and unknown errors.
-sealed abstract class Error extends Product with Serializable
-
-object Error {
-  final case class Unknown(msg: String) extends Error
-
-  sealed abstract class Known(val code: Int) extends Error
-  object Known {
-    // Convenient for pattern matching, lets us extract the code
-    // of any known error.
-    def unapply(known: Known): Option[Int] = Some(known.code)
-
-    final case object NotFound extends Known(404)
-    final case object BadRequest extends Known(400)
-  }
+object ExtractSome {
+  def unapply[A](s: Some[A]): Option[A] = s
 }
 ```
 
 Using this code, we can write the following pattern match:
 
 ```scala mdoc
-def getCode(error: Error): Int = error match {
-  case Error.Known(code) => code
+def unwrap(oi: Option[Int]): Int = oi match {
+  case ExtractSome(i) => i
 }
 ```
 
-We're not getting a warning, even though our pattern match is clearly non-exhaustive: it'll fail on any `Error.Unknown` value.
+We're not getting a warning, even though our pattern match is clearly non-exhaustive: it'll fail on [`None`].
 
 ```scala mdoc:crash
-getCode(Error.Unknown("error"))
+unwrap(None)
 ```
 
-The presence of an extractor whose return type was [`Option`] disabled exhaustivity checking, even in the presence of concrete values that are not covered by the pattern match.
+The presence of an extractor whose return type is [`Option`] disabled exhaustivity checking, even in the presence of concrete values that are not covered by the pattern match.
 
 Let's change our custom extractor to return a [`Some`]:
 
 ```scala mdoc:reset
-sealed abstract class Error extends Product with Serializable
-
-object Error {
-  final case class Unknown(msg: String) extends Error
-
-  sealed abstract class Known(val code: Int) extends Error
-  object Known {
-    def unapply(known: Known): Some[Int] = Some(known.code)
-
-    final case object NotFound extends Known(404)
-    final case object BadRequest extends Known(400)
-  }
+object ExtractSome {
+  def unapply[A](s: Some[A]): Some[A] = s
 }
 ```
 
 This is a subtle difference that changes everything: [`Some`] means that our extractor will always succeed, allowing the compiler to look for further proof of non-exhaustivity (and find it):
 
 ```scala mdoc:fail
-def getCode(error: Error): Int = error match {
-  case Error.Known(code) => code
+def unwrap(oi: Option[Int]): Int = oi match {
+  case ExtractSome(i) => i
 }
 ```
 
@@ -92,3 +69,4 @@ An even better rule of thumb would be to either not define custom extractors, or
 
 [`Some`]:https://www.scala-lang.org/api/2.12.8/scala/Some.html
 [`Option`]:https://www.scala-lang.org/api/2.12.8/scala/Option.html
+[`None`]:https://www.scala-lang.org/api/2.12.8/scala/None$.html
