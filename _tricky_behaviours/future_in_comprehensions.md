@@ -50,8 +50,6 @@ To make this evident, let's evaluate `combine`. However many times you run it, `
 
 ```scala
 Await.result(combine(), 500.millis)
-// LONG
-// IMMEDIATE
 // res1: Int = 3
 ```
 
@@ -73,8 +71,6 @@ And if we now evaluate `betterCombine`, the log messages should print in the exp
 
 ```scala
 Await.result(betterCombine(), 200.millis)
-// IMMEDIATE
-// LONG
 // res2: Int = 3
 ```
 
