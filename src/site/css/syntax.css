@@ -10,6 +10,19 @@ code {
     font-family: "Fira Mono";
 }
 
+p a code {
+    color: #268bd2;
+}
+
+p code {
+    font-size:     0.9em;
+    border:        1px solid #eee8d5;
+    padding:       2px 5px 2px 5px;
+    border-radius: 5px;
+    color:         #586e75;
+    background:    #fdf6e3;
+}
+
 .highlight .c { color: #586E75 } /* Comment */
 .highlight .err { color: #93A1A1 } /* Error */
 .highlight .g { color: #93A1A1 } /* Generic */
