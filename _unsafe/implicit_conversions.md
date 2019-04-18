@@ -29,9 +29,9 @@ Our proof is unfortunately flawed, and will result in runtime failures:
 ```scala
 "foobar" / 2
 // java.lang.NumberFormatException: For input string: "foobar"
-// 	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-// 	at java.base/java.lang.Integer.parseInt(Integer.java:652)
-// 	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+// 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+// 	at java.lang.Integer.parseInt(Integer.java:580)
+// 	at java.lang.Integer.parseInt(Integer.java:615)
 // 	at repl.Session$App$.str2int(implicit_conversions.md:8)
 // 	at repl.Session$App$$anonfun$1.apply$mcI$sp(implicit_conversions.md:15)
 // 	at repl.Session$App$$anonfun$1.apply(implicit_conversions.md:15)
