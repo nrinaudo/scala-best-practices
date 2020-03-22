@@ -2,12 +2,8 @@
 layout: index
 ---
 
-# Foreword
+# Introduction
 
-I often find myself, both professionaly and otherwise, having to explain bits of Scala to newcomers to the language (but usually not new to programming).
+I'm not yet entirely sure how this will turn out. The current plan is: I've given a few talks, which a few people have liked enough to complain that the slides weren't understandable without me to explain them. Rather than add lots and lots of text to my slides, or coming up with a way to clone myself to explain them, it's been suggested I write companion articles for them.
 
-Something that's becoming increasingly obvious is that Scala developers follow a certain set of unspoken rules without really thinking about them, and never really explain them to beginners. This is not helping Scala's reputation as a hard to learn language, which is unfortunate - it's a language I enjoy and wish more people would learn.
-
-This site is meant to address that, by listing and explaining all these rules I wish someone'd told me about when I was learning the language.
-
-Comments, suggestions, ... are welcome! I'm clearly not the best Scala developer out there and might have gotten things wrong, or right for the wrong reasons. If you see areas that could be improved on, feel free to open an issue!
+The purpose of this site is to host such articles. This might evolve if I find I enjoy writing enough and can muster the motivation to write other things, but for the moment, that's it - articles about my talks. Because I'm *that* full of myself.

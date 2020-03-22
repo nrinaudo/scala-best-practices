@@ -1,4 +1,4 @@
-{% assign sorted_pages = include.collection | sort: "title" %}
+{% assign sorted_pages = include.collection | sort: "sequence" %}
 <ul>
 {% for x in sorted_pages %}
 {% if x.title != "Index" %}

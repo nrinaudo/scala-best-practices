@@ -10,11 +10,11 @@ code {
     font-family: "Fira Mono";
 }
 
-p a code {
+p a code, li a code {
     color: #268bd2;
 }
 
-p code {
+p code, li code {
     font-size:     0.9em;
     border:        1px solid #eee8d5;
     padding:       2px 5px 2px 5px;

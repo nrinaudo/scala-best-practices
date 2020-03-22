@@ -1,43 +1,12 @@
-name:        Scala Best Practices
+name:        Nicolas Rinaudo
 markdown:    kramdown
 highlighter: rouge
-baseurl:     /scala-best-practices
 
 collections:
-  warming_up:
+  optics:
     output:   true
-    title:    Warming up
+    title:    Optics from the ground up
     sequence: 1
-  tricky_behaviours:
-    output:   true
-    title:    Tricky behaviours
-    sequence: 2
-  unsafe:
-    output:   true
-    title:    Unsafe patterns
-    sequence: 3
-  partial_functions:
-    output:   true
-    title:    Partial functions
-    sequence: 4
-  binary_compat:
-    output:   true
-    title:    Binary compatibility
-    sequence: 5
-  referential_transparency:
-    output:   true
-    title:    Referential transparency
-    sequence: 6
-  adts:
-    output:   true
-    title:    ADTs
-    sequence: 7
-  oop:
-    output:   true
-    title:    OOP
-    sequence: 8
-  definitions:
-    output: true
 
 kramdown:
   input:     GFM
