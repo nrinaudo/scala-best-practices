@@ -1,0 +1,57 @@
+<h1>Checked by</h1>
+{% if include.linters %}
+<table>
+  <thead>
+    <tr>
+      <th>Linter</th>
+      <th>Rule</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% assign sorted_linters = include.linters | sort: "name" %}
+    {% for linter in sorted_linters %}
+    {% case linter.name %}
+    {% when 'wartremover' %}
+    {% assign linter_name = 'WartRemover' %}
+    {% assign linter_url = 'http://www.wartremover.org/' %}
+    {% when 'scapegoat' %}
+    {% assign linter_name = 'Scapegoat' %}
+    {% assign linter_url = 'https://github.com/sksamuel/scapegoat' %}
+    {% when 'linter' %}
+    {% assign linter_name = 'Scala Linter' %}
+    {% assign linter_url = 'https://github.com/HairyFotr/linter' %}
+    {% when 'scalastyle' %}
+    {% assign linter_name = 'Scalastyle' %}
+    {% assign linter_url = 'http://www.scalastyle.org/' %}
+    {% else %}
+    {% assign linter_url = false %}
+    {% endcase %}
+    <tr>
+      <td>
+        {% if linter_url %}
+        <a href="{{ linter_url }}">{{ linter_name }}</a>
+        {% else %}
+        {{ linter_name }}
+        {% endif %}
+      </td>
+      <td>
+        <ul>
+          {% for rule in linter.rules %}
+          <li>
+            {% if rule.url %}
+            <a href="{{ rule.url }}">{{ rule.name }}</a>
+            {% else %}
+            {{ rule.name }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+This rule is not checked by any linter that I know of.
+{% endif %}

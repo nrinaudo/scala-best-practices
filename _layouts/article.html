@@ -1,17 +1,12 @@
 ---
 layout: compress
 ---
-
 {% include header.html %}
-
 <div class="wrapper">
-  {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+    {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+    {{ content }}
 
-  {% include prev_next.html %}
-
-  {{ content }}
-
-  {% include prev_next.html %}
+    {% include linters.html linters=page.linters %}
 </div>
 
 {% include footer.html %}
