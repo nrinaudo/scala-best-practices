@@ -77,6 +77,23 @@ a {
     text-decoration: none;
 }
 
+a:not([href]) {
+    color: #aaa;
+}
+
+.prev_next {
+    text-align: center;
+}
+
+.prev_next a[href]:hover {
+    color:              #79d0f9;
+    transition:         all 100ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition:    all 100ms ease-in-out;
+    -o-transition:      all 100ms ease-in-out;
+    -ms-transition:     all 100ms ease-in-out;
+}
+
 hr {
     border:           none;
     height:           1px;
@@ -189,4 +206,12 @@ td ul li:after {
 
 td ul li:last-child:after {
     content: "";
+}
+
+.figure {
+    display   : block;
+    text-align: center;
+    border    : 1px solid #dfdedc;
+    background: #f9f9f9;
+    padding   : 10px;
 }
