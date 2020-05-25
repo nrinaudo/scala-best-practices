@@ -14,6 +14,10 @@ linters:
     rules:
       - name: NullChecker
         url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_NullChecker
+  - name: scalafix
+    rules:
+      - name: DisableSyntax.noNulls = true
+        url: https://scalacenter.github.io/scalafix/docs/rules/DisableSyntax.html
 ---
 
 > Whenever `null` seems like a good idea, use [`Option`] instead.

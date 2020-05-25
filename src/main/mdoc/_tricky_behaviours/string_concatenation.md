@@ -6,6 +6,10 @@ linters:
     rules:
       - name: StringPlusAny
         url:  http://www.wartremover.org/doc/warts.html#stringplusany
+  - name: scalafix
+    rules:
+      - name: Disable.ifSynthetic = [ "scala.Predef.any2stringadd" ]
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When concatenating something to a [`String`], consider string interpolation rather than [`+`].

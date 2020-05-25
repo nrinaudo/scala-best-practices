@@ -8,6 +8,10 @@ linters:
         url:  http://www.wartremover.org/doc/warts.html#var
       - name: MutableDataStructures
         url: http://www.wartremover.org/doc/warts.html#mutabledatastructures
+  - name: scalafix
+    rules:
+      - name: Disable.symbols = [ "scala.collection.mutable" ]
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > Mutability is almost always a bad idea and should be avoided.

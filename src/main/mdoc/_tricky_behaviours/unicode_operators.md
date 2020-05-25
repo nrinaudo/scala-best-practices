@@ -6,6 +6,10 @@ linters:
     rules:
       - name: NonASCIICharacterChecker
         url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_NonASCIICharacterChecker
+  - name: scalafmt
+    rules:
+      - name: rewriteTokens
+        url:  https://scalameta.org/scalafmt/docs/configuration.html#rewritetokens
 ---
 
 > ASCII operators (such as `->`) should be preferred over their fancy unicode equivalents (such as `→`).
