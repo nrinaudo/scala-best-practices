@@ -19,9 +19,9 @@ final case class Foo(b1: Boolean, b2: Boolean)
 
 `Foo` aggregates two [`Boolean`] values.
 
-It's called a _product_ type because we can compute its arity (the number of values it can possibly have) by calculating the product of the types that compose it.
+It's called a _product_ type because we can compute its cardinality (the number of values it can possibly have) by calculating the product of the types that compose it.
 
-Here, [`Boolean`] has an arity of 2 (it can only contain either `true` or `false`), and thus `Foo` must have an arity of 4. Indeed:
+Here, [`Boolean`] has an cardinality of 2 (it can only contain either `true` or `false`), and thus `Foo` must have an cardinality of 4. Indeed:
 * `Foo(true, true)`
 * `Foo(true, false)`
 * `Foo(false, true)`
@@ -40,7 +40,7 @@ object Bool {
 }
 ```
 
-It's called a _sum_ type because its arity is equal to the sum of the arities of the types that compose it. Here, both `True` and `False` are singleton types, and `Bool` can indeed only have 2 possible values.
+It's called a _sum_ type because its cardinality is equal to the sum of the arities of the types that compose it. Here, both `True` and `False` are singleton types, and `Bool` can indeed only have 2 possible values.
 
 Sum types get a lot more interesting when you start using more complex data types for the alternatives.
 
