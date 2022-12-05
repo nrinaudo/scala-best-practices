@@ -39,7 +39,7 @@ time(list.isEmpty)
 // res0: Long = 0L
 
 time(list.size == 0)
-// res1: Long = 41L
+// res1: Long = 37L
 ```
 
 ## It's unsafe

@@ -44,6 +44,8 @@ body {
 #navbar span.internal {
     padding-right: 30px;
     float: left !important;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 600px) {
@@ -57,6 +59,7 @@ body {
 
     #navbar span.internal {
         padding-right: 7px;
+        font-size: 16px;
     }
 }
 
