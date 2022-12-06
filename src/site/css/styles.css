@@ -1,5 +1,5 @@
 @import './inter/inter.css';
-@import './fira_code/fira_code.css';
+@import './fira/fira.css';
 @import './fontawesome/font-awesome.css';
 
 body {
@@ -177,7 +177,7 @@ blockquote p {
 }
 
 code {
-    font-family: "Fira Code";
+    font-family: "Fira Mono";
 }
 
 p code, li code {
