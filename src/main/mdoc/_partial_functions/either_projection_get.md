@@ -9,6 +9,10 @@ linters:
   - name: scapegoat
     rules:
       - name: EitherGet
+  - name: scalafix
+    rules:
+      - name: Disable.symbols = [ "scala.util.Either.LeftProjection.get", "scala.util.Either.RightProjection.get" ]
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When retrieving the content of an [`Either`], do not use [`get`] on one of its projections.

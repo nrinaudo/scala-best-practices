@@ -13,6 +13,10 @@ linters:
     rules:
       - name: ReturnChecker
         url:  http://www.scalastyle.org/rules-1.0.0.html#org_scalastyle_scalariform_ReturnChecker
+  - name: scalafix
+    rules:
+      - name: DisableSyntax.noReturns = true
+        url: https://scalacenter.github.io/scalafix/docs/rules/DisableSyntax.html
 ---
 
 > There's never a good reason to use the `return` keyword.

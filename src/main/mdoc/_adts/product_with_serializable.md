@@ -1,6 +1,11 @@
 ---
 title: Make ADTs subtypes of Product and Serializable
 layout: article
+linters:
+  - name: scalafix
+    rules:
+      - name: NoInfer.disabledTypes = [ "scala.Serializable", "scala.Product" ]
+        url: https://github.com/eed3si9n/scalafix-noinfer
 ---
 
 > When writing an [ADT], always have the root type extend [`Product`] and [`Serializable`].

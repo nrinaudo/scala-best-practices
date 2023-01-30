@@ -9,6 +9,10 @@ linters:
   - name: scapegoat
     rules:
       - name: TryGet
+  - name: scalafix
+    rules:
+      - name: Disable.symbols = [ "scala.util.Try.get", "scala.util.Failure.get", "scala.util.Success.get" ]
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When retrieving the content of a [`Try`], do not use [`get`].

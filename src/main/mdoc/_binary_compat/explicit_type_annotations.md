@@ -6,6 +6,10 @@ linters:
     rules:
       - name: PublicInference
         url:  http://www.wartremover.org/doc/warts.html#publicinference
+  - name: scalafix
+    rules:
+      - name: ExplicitResultTypes
+        url: https://scalacenter.github.io/scalafix/docs/rules/ExplicitResultTypes.html
 ---
 
 > Always add an explicit type to your public members, even when you're happy with what's being inferred.

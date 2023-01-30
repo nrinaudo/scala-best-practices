@@ -6,6 +6,10 @@ linters:
     rules:
       - name: LeakingSealed
         url:  http://www.wartremover.org/doc/warts.html#leakingsealed
+  - name: scalafix
+    rules:
+      - name: MissingFinal.noLeakingSealed = true
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When writing a subtype for a [`sealed`] type, mark it as [`final`].

@@ -6,6 +6,10 @@ linters:
     rules:
       - name: ExplicitImplicitTypes
         url:  http://www.wartremover.org/doc/warts.html#explicitimplicittypes
+  - name: scalafix
+    rules:
+      - name: ExplicitResultTypes.skipLocalImplicits = false
+        url: https://scalacenter.github.io/scalafix/docs/rules/ExplicitResultTypes.html
 ---
 
 > Always add an explicit type to your implicit values or methods, even when they're private

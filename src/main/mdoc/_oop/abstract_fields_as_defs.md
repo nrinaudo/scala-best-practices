@@ -1,6 +1,11 @@
 ---
 title: Declare abstract fields as paren-less methods
 layout: article
+linters:
+  - name: scalafix
+    rules:
+      - name: DisableSyntax.noValInAbstract = true
+        url: https://scalacenter.github.io/scalafix/docs/rules/DisableSyntax.html
 ---
 
 > When declaring abstract fields in an abstract class or a trait, it's good practice to declare them as [paren-less] methods.

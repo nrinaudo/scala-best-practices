@@ -9,6 +9,10 @@ linters:
   - name: scapegoat
     rules:
       - name: OptionGet
+  - name: scalafix
+    rules:
+      - name: Disable.symbols = [ "scala.Option.get", "scala.Some.get", "scala.None.get" ]
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When retrieving the content of an [`Option`], do not use [`get`].

@@ -24,6 +24,12 @@
     {% when 'scalastyle' %}
     {% assign linter_name = 'Scalastyle' %}
     {% assign linter_url = 'http://www.scalastyle.org/' %}
+    {% when 'scalafix' %}
+    {% assign linter_name = 'Scalafix' %}
+    {% assign linter_url = 'https://scalacenter.github.io/scalafix/' %}
+    {% when 'scalafmt' %}
+    {% assign linter_name = 'Scalafmt' %}
+    {% assign linter_url = 'https://scalameta.org/scalafmt/' %}
     {% else %}
     {% assign linter_url = false %}
     {% endcase %}

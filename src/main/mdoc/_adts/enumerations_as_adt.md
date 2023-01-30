@@ -6,6 +6,10 @@ linters:
     rules:
       - name: Enumeration
         url:  http://www.wartremover.org/doc/warts.html#enumeration
+  - name: scalafix
+    rules:
+      - name: Disable.symbols = [ "scala.Enumeration" ]
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When you need to implement an enumeration, use an [ADT], not [`Enumeration`].

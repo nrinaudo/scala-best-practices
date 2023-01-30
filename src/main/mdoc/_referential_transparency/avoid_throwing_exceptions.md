@@ -6,6 +6,10 @@ linters:
     rules:
       - name: Throw
         url:  http://www.wartremover.org/doc/warts.html#throw
+  - name: scalafix
+    rules:
+      - name: DisableSyntax.noThrows = true
+        url: https://scalacenter.github.io/scalafix/docs/rules/DisableSyntax.html
 ---
 
 > Do not throw exceptions if you can possibly avoid it.

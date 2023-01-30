@@ -9,6 +9,10 @@ linters:
   - name: scapegoat
     rules:
       - name: FinalModifierOnCaseClass
+  - name: scalafix
+    rules:
+      - name: MissingFinal.noLeakingCaseClass = true
+        url: https://github.com/vovapolu/scaluzzi
 ---
 
 > When declaring a case class, make it [`final`].
